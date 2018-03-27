@@ -7,9 +7,39 @@ public class SortTest {
     public static void main(String[] args) {
         int[] arr = {1, 5, 3, 9, 2};
 
-        insertSort(arr);
+//        insertSort(arr);
+
+        quickSort(arr, 0, arr.length - 1);
 
         System.err.println(JSON.toJSONString(arr));
+    }
+
+    public static void quickSort(int[] arr, int left, int right) {
+        if (arr == null || left >= right) {
+            return;
+        }
+
+        int key = arr[left];
+        int low = left;
+        int high = right;
+
+        while (low < high) {
+            while (low < high && arr[high] > key) {
+                high--;
+            }
+
+            arr[low] = arr[high];
+
+            while (low < high && arr[low] < key) {
+                low++;
+            }
+
+            arr[high] = arr[low];
+        }
+
+        arr[low] = key;
+        quickSort(arr, left, low - 1);
+        quickSort(arr, low + 1, right);
     }
 
     public static void insertSort(int[] arr) {
