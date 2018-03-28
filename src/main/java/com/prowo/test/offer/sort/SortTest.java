@@ -27,13 +27,10 @@ public class SortTest {
             while (low < high && arr[high] > key) {
                 high--;
             }
-
             arr[low] = arr[high];
-
             while (low < high && arr[low] < key) {
                 low++;
             }
-
             arr[high] = arr[low];
         }
 
