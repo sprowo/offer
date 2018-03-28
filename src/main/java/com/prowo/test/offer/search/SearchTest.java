@@ -11,7 +11,7 @@ public class SearchTest {
         int[] arr = {1, 2, 3, 4, 5, 6};
 //        int[] arr = null;
         System.err.println(binarySearch(arr, 6));
-        System.err.println(binarySearch2(arr, 0, arr.length - 1, 5));
+        System.err.println(binarySearch(arr, 0, arr.length - 1, 6));
     }
 
     public static int binarySearch(int[] arr, int key) {
@@ -33,7 +33,7 @@ public class SearchTest {
         return -1;
     }
 
-    public static int binarySearch2(int[] arr, int left, int right, int key) {
+    public static int binarySearch(int[] arr, int left, int right, int key) {
         if (arr == null) {
             throw new NullPointerException("arr is null");
         }
@@ -41,9 +41,9 @@ public class SearchTest {
         if (left <= right) {
             int mid = (left + right) / 2;
             if (key < arr[mid]) {
-                binarySearch2(arr, left, mid - 1, key);
+                return binarySearch(arr, left, mid - 1, key);
             } else if (key > arr[mid]) {
-                binarySearch2(arr, mid + 1, right, key);
+                return binarySearch(arr, mid + 1, right, key);
             } else {
                 return mid;
             }
