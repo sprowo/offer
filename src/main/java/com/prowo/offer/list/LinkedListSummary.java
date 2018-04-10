@@ -1,5 +1,9 @@
 package com.prowo.offer.list;
 
+import com.alibaba.fastjson.JSON;
+
+import java.util.ArrayList;
+
 /**
  * 1. 反转链表
  * 2. 计算链表长度
@@ -38,6 +42,8 @@ public class LinkedListSummary {
         node8.next = node9;
         node9.next = node10;
 
+        System.err.println(JSON.toJSONString(printListFromTailToHead2(node1)));
+
 //        System.err.println(getListLength(node1));
 //        System.err.println(reverseList(node1));
 //        System.err.println(reverseListRec(node1));
@@ -47,7 +53,16 @@ public class LinkedListSummary {
 //        System.err.println(hasCycle(node1));
 //        System.err.println(mergeSortedList(node1, node6));
 //        System.err.println(mergeSortedListRec(node1, node6));
-        System.err.println(isIntersect(node1, node6).value);
+//        System.err.println(isIntersect(node1, node6).value);
+    }
+
+    public static ArrayList<Integer> printListFromTailToHead2(Node head) {
+        ArrayList<Integer> list = new ArrayList<>();
+        if (head != null) {
+            printListFromTailToHead2(head.next);
+            list.add(head.value);
+        }
+        return list;
     }
 
     /**
