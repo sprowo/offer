@@ -1,4 +1,4 @@
-package com.prowo.test.offer.list;
+package com.prowo.offer.test.list;
 
 /**
  * @author prowo

@@ -1,4 +1,4 @@
-package com.prowo.test.offer;
+package com.prowo.offer.test;
 
 import com.alibaba.fastjson.JSON;
 

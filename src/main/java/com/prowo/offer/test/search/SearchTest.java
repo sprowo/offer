@@ -1,4 +1,4 @@
-package com.prowo.test.offer.search;
+package com.prowo.offer.test.search;
 
 /**
  * @author prowo
